@@ -15,6 +15,11 @@ jobs:
       - name: Apply namespace
         run: kubectl apply -f k8s/namespace.yaml
 
+      - name: Install Helm
+        uses: azure/setup-helm@v3
+        with:
+          version: v3.14.0 # Puedes cambiar la versión si lo deseas
+
       - name: Add Headlamp Helm repo
         run: helm repo add headlamp https://headlamp-k8s.github.io/headlamp
 
